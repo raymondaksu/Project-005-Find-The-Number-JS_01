@@ -9,6 +9,12 @@ const reset_button = document.getElementById("reset_button");
 const desc = document.getElementById("result_count");
 var counter = 1;
 
+function setTheFocus() {
+    input_area.focus();
+}
+
+setTheFocus();
+
 check_button.addEventListener("click", nr_checker);
 reset_button.addEventListener("click", reset_page);
 
@@ -41,10 +47,12 @@ function nr_checker() {
             desc.innerHTML = "Go up. It was your " + counter + ".attempt!";
             counter++;
             input_area.value="";
+            input_area.focus();
         } else {
             desc.innerHTML = "Go down. It was your " + counter + ".attempt!";
             counter++;
             input_area.value="";
+            input_area.focus();
         }
     }
      else if (guess == ""){
